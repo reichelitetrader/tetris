@@ -9,7 +9,7 @@ public class Board {
 
     public Board() {
         clearBoard();
-        
+
     }
 
     public static void clearBoard() {
@@ -20,13 +20,17 @@ public class Board {
         }
     }
 
-    public void displayState() {
-        System.out.println("ponizej stan planszy:");
+    public void clearActiveBlock() {
         for (int i = 0; i < activeBlock.points.length; i++) {
             int x = activeBlock.points[i].x;
             int y = activeBlock.points[i].y;
-            fields[y][x] = true;
+            fields[y][x] = false;
         }
+    }
+
+    public void displayState() {
+        System.out.println("ponizej stan planszy:");
+        drawActiveBlock();
         for (int i = 0; i < fields.length; i++) {
             System.out.print("|");
             for (int j = 0; j < fields.length; j++) {
@@ -41,7 +45,16 @@ public class Board {
             System.out.print("|");
             System.out.println();
         }
+        clearActiveBlock();
 
+    }
+
+    private void drawActiveBlock() {
+        for (int i = 0; i < activeBlock.points.length; i++) {
+            int x = activeBlock.points[i].x;
+            int y = activeBlock.points[i].y;
+            fields[y][x] = true;
+        }
     }
 
 }
