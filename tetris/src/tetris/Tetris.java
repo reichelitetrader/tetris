@@ -2,6 +2,7 @@ package tetris;
 
 import boards.Board;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class Tetris {
 
@@ -11,13 +12,18 @@ public class Tetris {
 
     int score = 0;
 
-    public static void main(String[] args) {
-        board.displayState();
+    public static void main(String[] args) throws InterruptedException {
         //Tetris game = new Tetris();
         Scanner scan = new Scanner(System.in);
         System.out.println("wprowadz imie:");
         playerName = scan.nextLine();
         System.out.println("rozpoczynasz nowa gre:");
+        while (true) {
+            board.activeBlock.moveDown();
+            board.displayState();
+            TimeUnit.SECONDS.sleep(1);
+
+        }
 
     }
 
