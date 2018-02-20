@@ -24,7 +24,9 @@ public class Board {
         for (int i = 0; i < activeBlock.points.length; i++) {
             int x = activeBlock.points[i].x;
             int y = activeBlock.points[i].y;
-            fields[y][x] = false;
+            if (y < fields.length && x < fields.length) {
+                fields[y][x] = false;
+            }
         }
     }
 
@@ -53,7 +55,9 @@ public class Board {
         for (int i = 0; i < activeBlock.points.length; i++) {
             int x = activeBlock.points[i].x;
             int y = activeBlock.points[i].y;
-            fields[y][x] = true;
+            if (y < fields.length && x < fields.length) {
+                fields[y][x] = true;
+            }
         }
     }
 
