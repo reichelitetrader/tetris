@@ -9,6 +9,7 @@ public class Board {
 
     public Board() {
         clearBoard();
+        
 
     }
 
@@ -32,6 +33,7 @@ public class Board {
 
     public void displayState() {
         System.out.println("ponizej stan planszy:");
+      
         drawActiveBlock();
         for (int i = 0; i < fields.length; i++) {
             System.out.print("|");
@@ -47,7 +49,6 @@ public class Board {
             System.out.print("|");
             System.out.println();
         }
-        clearActiveBlock();
 
     }
 
@@ -60,5 +61,14 @@ public class Board {
             }
         }
     }
-
+    
+    
+   public boolean checkIfBlockFallDown(){
+       int y = activeBlock.points[0].y;
+       return y==fields.length-1;
+   }
+   
+   
+   
+    
 }
