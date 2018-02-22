@@ -65,7 +65,13 @@ public class Board {
     
    public boolean checkIfBlockFallDown(){
        int y = activeBlock.points[0].y;
-       return y==fields.length-1;
+       int x = activeBlock.points[0].x;
+       if(y==fields.length-1 ){
+           return true;
+           
+           
+       }
+       return fields[y+1][x] == true;
    }
    
    

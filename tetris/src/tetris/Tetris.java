@@ -22,7 +22,7 @@ public class Tetris {
         System.out.println("rozpoczynasz nowa gre:");
         while (true) {
             if (!board.checkIfBlockFallDown()) {
-                
+              
                 board.clearActiveBlock();
                 board.activeBlock.moveDown();
                 
