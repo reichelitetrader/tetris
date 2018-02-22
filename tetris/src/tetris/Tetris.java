@@ -1,10 +1,8 @@
 package tetris;
 
-
 import boards.Board;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
-
 
 public class Tetris {
 
@@ -22,15 +20,17 @@ public class Tetris {
         System.out.println("rozpoczynasz nowa gre:");
         while (true) {
             if (!board.checkIfBlockFallDown()) {
-              
+
                 board.clearActiveBlock();
                 board.activeBlock.moveDown();
-                
 
-            }else {
+            } else if (board.checkEndOfGame()) {
+                System.out.println("koniec gry");
+                break;
+            } else {
                 board.activeBlock = new blocks.Dot();
+
             }
-         
 
             board.displayState();
             TimeUnit.SECONDS.sleep(1);

@@ -68,4 +68,16 @@ public class Board {
         return y == fields.length - 1 || fields[y + 1][x] == true;
     }
 
+    public boolean checkEndOfGame() {
+
+        for (int x = 0; x < fields.length; x++) {
+            if (fields[0][x]) {
+                return true;
+
+            }
+        }
+        return false;
+
+    }
+
 }
