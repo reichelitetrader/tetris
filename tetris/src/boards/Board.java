@@ -1,15 +1,12 @@
 package boards;
-
 import blocks.Dot;
 
 public class Board {
-
     public static boolean[][] fields = new boolean[10][20];
     public Dot activeBlock = new Dot();
 
     public Board() {
         clearBoard();
-
     }
 
     public static void clearBoard() {
@@ -39,16 +36,13 @@ public class Board {
             for (int j = 0; j < fields.length; j++) {
                 if (fields[i][j] == true) {
                     System.out.print("X");
-
                 } else {
                     System.out.print(" ");
                 }
-
             }
             System.out.print("|");
             System.out.println();
         }
-
     }
 
     private void drawActiveBlock() {
@@ -64,20 +58,15 @@ public class Board {
     public boolean checkIfBlockFallDown() {
         int y = activeBlock.points[0].y;
         int x = activeBlock.points[0].x;
-
         return y == fields.length - 1 || fields[y + 1][x] == true;
     }
 
     public boolean checkEndOfGame() {
-
         for (int x = 0; x < fields.length; x++) {
             if (fields[0][x]) {
                 return true;
-
             }
         }
         return false;
-
     }
-
 }
