@@ -12,7 +12,8 @@ public class Square extends Dot {
     };
     
    public Square(){
-       this.points = squarePoints; 
+       super();
+       this.points = squarePoints;
    }
     
 }
