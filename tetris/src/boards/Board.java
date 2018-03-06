@@ -1,4 +1,5 @@
 package boards;
+import blocks.Bolt;
 import blocks.Dot;
 import blocks.L;
 import blocks.Pipe;
@@ -6,7 +7,7 @@ import blocks.Square;
 
 public class Board {
     public static boolean[][] fields = new boolean[10][20];
-    public L activeBlock = new L();
+    public Bolt activeBlock = new Bolt();
     
 
     public Board() {
