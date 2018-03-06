@@ -1,9 +1,11 @@
 package boards;
 import blocks.Dot;
+import blocks.Square;
 
 public class Board {
     public static boolean[][] fields = new boolean[10][20];
-    public Dot activeBlock = new Dot();
+    public Square activeBlock = new Square();
+    
 
     public Board() {
         clearBoard();

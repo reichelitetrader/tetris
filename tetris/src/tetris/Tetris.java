@@ -28,7 +28,8 @@ public class Tetris {
                 System.out.println("koniec gry");
                 break;
             } else {
-                board.activeBlock = new blocks.Dot();
+                //board.activeBlock = new blocks.Dot();
+                board.activeBlock = new blocks.Square();
             }
             board.displayState();
             //  TimeUnit.SECONDS.sleep(1);
@@ -36,9 +37,12 @@ public class Tetris {
             System.out.println("wykonaj ruch:");
             zKlawiatury = scan.next();
             if ("A".equals(zKlawiatury)) {
+                
+               board.clearActiveBlock();
                board.activeBlock.moveLeft();
       
             } else if ("D".equals(zKlawiatury)) {
+                board.clearActiveBlock();
                 board.activeBlock.moveRight();
                
             }
