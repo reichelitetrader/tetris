@@ -29,7 +29,7 @@ public class Tetris {
                 break;
             } else {
                 //board.activeBlock = new blocks.Dot();
-                board.activeBlock = new blocks.Pipe();
+                board.activeBlock = new blocks.L();
             }
             board.displayState();
             //  TimeUnit.SECONDS.sleep(1);
