@@ -8,10 +8,10 @@ public class Bolt extends Dot {
         new Point(4, 0),
         new Point(4, 1),
         new Point(5, 0),
-        new Point(3, 1)     
-};
+        new Point(3, 1)
+    };
 
-public Bolt(){
+    public Bolt() {
         super();
         this.points = BoltPoints;
     }

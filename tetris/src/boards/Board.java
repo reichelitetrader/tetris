@@ -3,11 +3,12 @@ import blocks.Bolt;
 import blocks.Dot;
 import blocks.L;
 import blocks.Pipe;
+import blocks.Pyramid;
 import blocks.Square;
 
 public class Board {
     public static boolean[][] fields = new boolean[10][20];
-    public Bolt activeBlock = new Bolt();
+    public Pyramid activeBlock = new Pyramid();
     
 
     public Board() {
