@@ -2,7 +2,7 @@ package blocks;
 
 import java.awt.Point;
 
-public class Pipe extends Dot {
+public class Pipe extends Block {
 
     public Point[] pipePoints = {
         new Point(1, 0),

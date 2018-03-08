@@ -3,7 +3,7 @@ package blocks;
 
 import java.awt.Point;
 
-public class Pyramid extends Dot {
+public class Pyramid extends Block {
     
     public Point[] PyramidPoints = {
         new Point(0,1),
