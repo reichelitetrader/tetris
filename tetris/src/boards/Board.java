@@ -1,14 +1,13 @@
 package boards;
-import blocks.Bolt;
+import blocks.Block;
 import blocks.Dot;
-import blocks.L;
-import blocks.Pipe;
-import blocks.Pyramid;
-import blocks.Square;
 
 public class Board {
+    
     public static boolean[][] fields = new boolean[10][20];
-    public Pyramid activeBlock = new Pyramid();
+    public Block activeBlock = new Dot();
+    
+    
     
 
     public Board() {
