@@ -1,5 +1,6 @@
 package tetris;
 
+import blocks.BlockFactory;
 import boards.Board;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
@@ -29,7 +30,7 @@ public class Tetris {
                 break;
             } else {
                 //board.activeBlock = new blocks.Dot();
-                board.activeBlock = new blocks.Pyramid();
+                board.activeBlock = BlockFactory.createRandomBlock();
             }
             board.displayState();
             //  TimeUnit.SECONDS.sleep(1);

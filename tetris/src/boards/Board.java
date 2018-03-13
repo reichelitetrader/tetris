@@ -1,11 +1,12 @@
 package boards;
 import blocks.Block;
+import blocks.BlockFactory;
 import blocks.Dot;
 
 public class Board {
     
     public static boolean[][] fields = new boolean[10][20];
-    public Block activeBlock = new Dot();
+    public Block activeBlock = BlockFactory.createRandomBlock();
     
     
     
