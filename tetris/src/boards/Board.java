@@ -1,15 +1,13 @@
 package boards;
+
 import blocks.Block;
 import blocks.BlockFactory;
 import blocks.Dot;
 
 public class Board {
-    
+
     public static boolean[][] fields = new boolean[10][20];
     public Block activeBlock = BlockFactory.createRandomBlock();
-    
-    
-    
 
     public Board() {
         clearBoard();
@@ -62,9 +60,17 @@ public class Board {
     }
 
     public boolean checkIfBlockFallDown() {
-        int y = activeBlock.points[0].y;
-        int x = activeBlock.points[0].x;
-        return y == fields.length - 1 || fields[y + 1][x] == true;
+
+        for (int i = 0; i < activeBlock.points.length; i++) {
+            int y = activeBlock.points[i].y;
+            int x = activeBlock.points[i].x;
+
+            if (y == fields.length -1 || fields[y][x] == true) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public boolean checkEndOfGame() {
