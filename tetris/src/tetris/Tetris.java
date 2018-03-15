@@ -52,6 +52,10 @@ public class Tetris {
                 }
                 board.activeBlock.moveRight();
 
+            } else if("S".equals(zKlawiatury)){
+                if(board.checkIfBlockFallDown()){
+                    board.clearActiveBlock();
+                }
             }
 
         }
