@@ -41,7 +41,8 @@ public class Tetris {
                 
                board.clearActiveBlock();
                board.activeBlock.moveLeft();
-      
+
+               
             } else if ("D".equals(zKlawiatury)) {
                 board.clearActiveBlock();
                 board.activeBlock.moveRight();
