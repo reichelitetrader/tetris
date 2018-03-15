@@ -65,11 +65,26 @@ public class Board {
             int y = activeBlock.points[i].y;
             int x = activeBlock.points[i].x;
 
-            if (y == fields.length -1 || fields[y][x] == true) {
+            if (y == fields.length -1 
+                    ||(fields[y+1][x] == true 
+                    && checkIfCoordineIsActiveBlock(y , x))) {
+                
+                
                 return true;
             }
         }
 
+        return false;
+    }
+    
+    public boolean  checkIfCoordineIsActiveBlock(int testY, int testX ){
+        for(int i=0; i < activeBlock.points.length; i++){
+             int y = activeBlock.points[i].y;
+            int x = activeBlock.points[i].x;
+            if( y == testY && x == testX) {
+                return true;
+            }
+        }
         return false;
     }
 

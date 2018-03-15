@@ -24,7 +24,7 @@ public class Tetris {
             if (!board.checkIfBlockFallDown()) {
                 board.clearActiveBlock();
                 board.activeBlock.moveDown();
-                
+
             } else if (board.checkEndOfGame()) {
                 System.out.println("koniec gry");
                 break;
@@ -38,15 +38,20 @@ public class Tetris {
             System.out.println("wykonaj ruch:");
             zKlawiatury = scan.next();
             if ("A".equals(zKlawiatury)) {
-                
-               board.clearActiveBlock();
-               board.activeBlock.moveLeft();
+                if (!board.checkIfBlockFallDown()) {
+                    board.clearActiveBlock();
 
-               
+                }
+
+                board.activeBlock.moveLeft();
+
             } else if ("D".equals(zKlawiatury)) {
-                board.clearActiveBlock();
+                if (!board.checkIfBlockFallDown()) {
+                    board.clearActiveBlock();
+
+                }
                 board.activeBlock.moveRight();
-               
+
             }
 
         }
