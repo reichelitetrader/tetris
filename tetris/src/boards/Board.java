@@ -65,23 +65,22 @@ public class Board {
             int y = activeBlock.points[i].y;
             int x = activeBlock.points[i].x;
 
-            if (y == fields.length -1 
-                    ||(fields[y+1][x] == true 
-                    && !checkIfCoordineIsActiveBlock(y , x))) {
-                
-                
+            if (y == fields.length - 1
+                    || (fields[y + 1][x] == true
+                    && !checkIfCoordineIsActiveBlock(y, x))) {
+
                 return true;
             }
         }
 
         return false;
     }
-    
-    public boolean  checkIfCoordineIsActiveBlock(int testY, int testX ){
-        for(int i=0; i < activeBlock.points.length; i++){
-             int y = activeBlock.points[i].y;
+
+    public boolean checkIfCoordineIsActiveBlock(int testY, int testX) {
+        for (int i = 0; i < activeBlock.points.length; i++) {
+            int y = activeBlock.points[i].y;
             int x = activeBlock.points[i].x;
-            if( y == testY && x == testX) {
+            if (y == testY && x == testX) {
                 return true;
             }
         }
@@ -96,4 +95,27 @@ public class Board {
         }
         return false;
     }
+
+    public void removedFilledLines() {
+        for (int i = 0; i < fields.length; i++) {
+            if (isLineFilled(i)) {
+                System.out.println("wykryto wypelniona linie:");
+            }
+        }
+
+    }
+    
+    
+    
+
+    public boolean isLineFilled(int i) {
+        boolean isLineFilled = true;
+        for (int j = 0; j < fields[i].length; j++) {
+            if (fields[i][j] == false) {
+                isLineFilled = false;
+            }
+        }
+        return isLineFilled;
+    }
+
 }

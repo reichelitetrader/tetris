@@ -30,6 +30,7 @@ public class Tetris {
                 break;
             } else {
                 //board.activeBlock = new blocks.Dot();
+                board.removedFilledLines();
                 board.activeBlock = BlockFactory.createRandomBlock();
             }
             board.displayState();
@@ -57,6 +58,8 @@ public class Tetris {
                     board.clearActiveBlock();
                 }
             }
+            
+            
 
         }
     }

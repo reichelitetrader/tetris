@@ -26,6 +26,7 @@ public class BlockFactory {
     }
 
     public static Block createRandomBlock() {
+      /*
         Block block = new Dot();
         int number = getRandom();
         if (number == 1) {
@@ -41,7 +42,10 @@ public class BlockFactory {
         }
 
         return block;
+        */
+      return new Pipe();
     }
+      
 
     public static int getRandom() {
 
