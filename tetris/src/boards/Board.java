@@ -67,7 +67,7 @@ public class Board {
 
             if (y == fields.length - 1
                     || (fields[y + 1][x] == true
-                    && !checkIfCoordineIsActiveBlock(y, x))) {
+                    && !checkIfCoordineIsActiveBlock(y + 1, x))) {
 
                 return true;
             }
