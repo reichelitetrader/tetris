@@ -30,15 +30,15 @@ public class BlockFactory {
         Block block = new Dot();
         int number = getRandom();
         if (number == 1) {
-            block = new Square();
+            block = new Dot();
         } else if (number == 2) {
-            block = new Pyramid();
+            block = new Dot();
         } else if (number == 3) {
-            block = new Pipe();
+            block = new Dot();
         } else if (number == 4) {
-            block = new L();
+            block = new Dot();
         } else if (number == 5) {
-            block = new Bolt();
+            block = new Dot();
         }
         return block;
     }

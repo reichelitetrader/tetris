@@ -6,7 +6,7 @@ import blocks.Dot;
 
 public class Board {
 
-    public static boolean[][] fields = new boolean[10][20];
+    public static boolean[][] fields = new boolean[10][10];
     public Block activeBlock = BlockFactory.createRandomBlock();
 
     public Board() {
@@ -97,7 +97,7 @@ public class Board {
     }
 
     public void removedFilledLines() {
-        for (int i = 0; i < fields.length; i++) {
+        for (int i = 0; i < fields[0].length; i++) {
             if (isLineFilled(i)) {
                 System.out.println("wykryto wypelniona linie:");
             }
@@ -110,10 +110,12 @@ public class Board {
 
     public boolean isLineFilled(int i) {
         boolean isLineFilled = true;
-        for (int j = 0; j < fields[i].length; j++) {
+        for (int j = 0; j < fields.length; j++) {   
             if (fields[i][j] == false) {
                 isLineFilled = false;
+                break;
             }
+            
         }
         return isLineFilled;
     }
