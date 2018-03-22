@@ -11,6 +11,7 @@ public class Board {
 
     public Board() {
         clearBoard();
+
     }
 
     public static void clearBoard() {
@@ -18,6 +19,12 @@ public class Board {
             for (int j = 0; j < fields.length; j++) {
                 fields[i][j] = false;
             }
+        }
+    }
+
+    public static void clearLine(int lineNumber) {
+        for (int i = 0; i < fields.length; i++) {
+            fields[lineNumber][i] = false;
         }
     }
 
@@ -97,25 +104,24 @@ public class Board {
     }
 
     public void removedFilledLines() {
+
         for (int i = 0; i < fields[0].length; i++) {
             if (isLineFilled(i)) {
                 System.out.println("wykryto wypelniona linie:");
+                clearLine(i);
             }
         }
 
     }
-    
-    
-    
 
     public boolean isLineFilled(int i) {
         boolean isLineFilled = true;
-        for (int j = 0; j < fields.length; j++) {   
+        for (int j = 0; j < fields.length; j++) {
             if (fields[i][j] == false) {
                 isLineFilled = false;
                 break;
             }
-            
+
         }
         return isLineFilled;
     }
