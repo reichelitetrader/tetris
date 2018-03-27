@@ -22,8 +22,8 @@ public class Board {
         for (int i = 0; i < fields.length; i++) {
             fields[lineNumber][i] = false;
         } 
-        for(int i = fields.length-1; i<=fields.length; i--){
-            for(int j = fields[i].length-1 ; j <= 0; j--){
+        for(int i = fields.length-1; i>0; i--){
+            for(int j = fields[i].length-1 ; j > 0; j--){
                 fields[i][j] = fields[i-1][j];
             }
         }
