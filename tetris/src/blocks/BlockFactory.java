@@ -1,10 +1,7 @@
 package blocks;
-
-import boards.Board;
 import java.util.Random;
 
 public class BlockFactory {
-
     public static Block createBlock(String wybor) {
         Block block = null;
 
@@ -21,12 +18,10 @@ public class BlockFactory {
         } else if ("Sguare".equals(wybor)) {
             block = new Square();
         }
-
         return block;
     }
 
     public static Block createRandomBlock() {
-      
         Block block = new Dot();
         int number = getRandom();
         if (number == 1) {
@@ -43,11 +38,8 @@ public class BlockFactory {
         return block;
     }
       
-
     public static int getRandom() {
-
         Random rand = new Random();
         return rand.nextInt(6);
     }
-
 }

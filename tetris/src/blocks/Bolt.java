@@ -1,9 +1,7 @@
 package blocks;
-
 import java.awt.Point;
 
 public class Bolt extends Block {
-
     public Point[] BoltPoints = {
         new Point(4, 0),
         new Point(4, 1),

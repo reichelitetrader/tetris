@@ -1,22 +1,16 @@
 package tetris;
-
 import blocks.BlockFactory;
 import boards.Board;
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
 
 public class Tetris {
-
     int moveNumber = 0;
     static Board board = new Board();
     static String playerName = "";
-
     int score = 0;
     static Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args) throws InterruptedException {
-        //Tetris game = new Tetris();
-
         System.out.println("wprowadz imie:");
         playerName = scan.nextLine();
         System.out.println("rozpoczynasz nowa gre:");
@@ -30,13 +24,11 @@ public class Tetris {
                     if (!board.checkIfBlockFallDown()) {
                         board.clearActiveBlock();
                     }
-
                     board.activeBlock.moveLeft();
 
                 } else if ("D".equals(zKlawiatury)) {
                     if (!board.checkIfBlockFallDown()) {
                         board.clearActiveBlock();
-
                     }
                     board.activeBlock.moveRight();
 
@@ -56,7 +48,6 @@ public class Tetris {
             }
             board.displayState();
             //  TimeUnit.SECONDS.sleep(1);
-
         }
     }
 }

@@ -1,9 +1,7 @@
 package blocks;
-
 import java.awt.Point;
 
 public class Square extends Block {
-  
     public Point[] squarePoints = {
         new Point(4,0),
         new Point(5,0),
@@ -15,5 +13,4 @@ public class Square extends Block {
        super();
        this.points = squarePoints;
    }
-    
 }

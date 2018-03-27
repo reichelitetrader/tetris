@@ -1,14 +1,10 @@
-
 package blocks;
-
 import java.awt.Point;
 
 public abstract class Block {
-    
     public Point[] points = {
         new Point(4, 0)
     };
-
     
     public Point[] moveDown() {
         for (int i = 0; i < points.length; i++) {
@@ -30,12 +26,4 @@ public abstract class Block {
         }
         return points;
     }
-   
-//    public Point[] rotate(){
-//        
-//    }
-    
-    
-    
-    
 }

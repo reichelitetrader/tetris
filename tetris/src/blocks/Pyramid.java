@@ -1,10 +1,7 @@
-
 package blocks;
-
 import java.awt.Point;
 
 public class Pyramid extends Block {
-    
     public Point[] PyramidPoints = {
         new Point(0,1),
         new Point(0,2),
@@ -16,7 +13,4 @@ public class Pyramid extends Block {
         super();
         this.points = PyramidPoints;
     }
-   
-    
-    
 }

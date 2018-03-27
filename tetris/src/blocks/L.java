@@ -1,9 +1,7 @@
 package blocks;
-
 import java.awt.Point;
 
 public class L extends Block {
-
     public Point[] LPoints = {
         new Point(1, 0),
         new Point(2, 0),
