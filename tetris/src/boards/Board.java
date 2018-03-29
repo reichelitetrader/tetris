@@ -95,6 +95,18 @@ public class Board {
         }
             return true;  
     }
+    
+    public boolean checkIfBlockCanMoveRight(){
+        for(int i=0; i<activeBlock.points.length; i++){
+            int y = activeBlock.points[i].y;
+            int x = activeBlock.points[i].x;
+            
+            if(x == fields.length-1){
+                return false;
+            }
+        }
+            return true;  
+    }
 
     public boolean checkIfCoordineIsActiveBlock(int testY, int testX) {
         for (int i = 0; i < activeBlock.points.length; i++) {

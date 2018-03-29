@@ -1,9 +1,11 @@
 package tetris;
+
 import blocks.BlockFactory;
 import boards.Board;
 import java.util.Scanner;
 
 public class Tetris {
+
     int moveNumber = 0;
     static Board board = new Board();
     static String playerName = "";
@@ -24,16 +26,18 @@ public class Tetris {
                     if (!board.checkIfBlockFallDown()) {
                         board.clearActiveBlock();
                     }
-                    if(board.checkIfBlockCanMoveLeft()){
-                       board.activeBlock.moveLeft(); 
+                    if (board.checkIfBlockCanMoveLeft()) {
+                        board.activeBlock.moveLeft();
                     }
-                    
 
                 } else if ("D".equals(zKlawiatury)) {
                     if (!board.checkIfBlockFallDown()) {
                         board.clearActiveBlock();
                     }
-                    board.activeBlock.moveRight();
+
+                    if (board.checkIfBlockCanMoveRight()) {
+                        board.activeBlock.moveRight();
+                    }
 
                 } else if ("S".equals(zKlawiatury)) {
                     if (board.checkIfBlockFallDown()) {
