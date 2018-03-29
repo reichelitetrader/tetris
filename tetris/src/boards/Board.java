@@ -1,8 +1,10 @@
 package boards;
+
 import blocks.Block;
 import blocks.BlockFactory;
 
 public class Board {
+
     public static boolean[][] fields = new boolean[10][10];
     public Block activeBlock = BlockFactory.createRandomBlock();
 
@@ -17,14 +19,15 @@ public class Board {
             }
         }
     }
-    
+
     public static void clearLine(int lineNumber) {
         for (int i = 0; i < fields.length; i++) {
             fields[lineNumber][i] = false;
-        } 
-        for(int i = fields.length-1; i>0; i--){
-            for(int j = fields[i].length-1 ; j > 0; j--){
-                fields[i][j] = fields[i-1][j];
+        }
+        for (int i = fields.length - 1; i > 0; i--) {
+            for (int j = fields[i].length - 1; j > 0; j--) {
+
+                fields[i][j] = fields[i - 1][j];
             }
         }
     }
@@ -61,7 +64,7 @@ public class Board {
             int x = activeBlock.points[i].x;
             int y = activeBlock.points[i].y;
             if (y < fields.length && x < fields.length) {
-                
+
                 fields[y][x] = true;
             }
         }
@@ -80,6 +83,18 @@ public class Board {
         }
         return false;
     }
+    
+    public boolean checkIfBlockCanMoveLeft(){
+        for(int i=0; i<activeBlock.points.length; i++){
+            int y = activeBlock.points[i].y;
+            int x = activeBlock.points[i].x;
+            
+            if(x == 0){
+                return false;
+            }
+        }
+            return true;  
+    }
 
     public boolean checkIfCoordineIsActiveBlock(int testY, int testX) {
         for (int i = 0; i < activeBlock.points.length; i++) {
@@ -91,6 +106,8 @@ public class Board {
         }
         return false;
     }
+    
+   
 
     public boolean checkEndOfGame() {
         for (int x = 0; x < fields.length; x++) {

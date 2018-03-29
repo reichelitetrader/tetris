@@ -24,7 +24,10 @@ public class Tetris {
                     if (!board.checkIfBlockFallDown()) {
                         board.clearActiveBlock();
                     }
-                    board.activeBlock.moveLeft();
+                    if(board.checkIfBlockCanMoveLeft()){
+                       board.activeBlock.moveLeft(); 
+                    }
+                    
 
                 } else if ("D".equals(zKlawiatury)) {
                     if (!board.checkIfBlockFallDown()) {
