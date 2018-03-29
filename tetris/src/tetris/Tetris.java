@@ -27,6 +27,7 @@ public class Tetris {
                         board.clearActiveBlock();
                     }
                     if (board.checkIfBlockCanMoveLeft()) {
+                        board.activeBlock.moveDown();
                         board.activeBlock.moveLeft();
                     }
 
@@ -36,6 +37,7 @@ public class Tetris {
                     }
 
                     if (board.checkIfBlockCanMoveRight()) {
+                        board.activeBlock.moveDown();
                         board.activeBlock.moveRight();
                     }
 

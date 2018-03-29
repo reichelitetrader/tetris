@@ -69,6 +69,8 @@ public class Board {
             }
         }
     }
+    
+    
 
     public boolean checkIfBlockFallDown() {
         for (int i = 0; i < activeBlock.points.length; i++) {
@@ -83,29 +85,29 @@ public class Board {
         }
         return false;
     }
-    
-    public boolean checkIfBlockCanMoveLeft(){
-        for(int i=0; i<activeBlock.points.length; i++){
+
+    public boolean checkIfBlockCanMoveLeft() {
+        for (int i = 0; i < activeBlock.points.length; i++) {
             int y = activeBlock.points[i].y;
             int x = activeBlock.points[i].x;
-            
-            if(x == 0){
+
+            if (x == 0) {
                 return false;
             }
         }
-            return true;  
+        return true;
     }
-    
-    public boolean checkIfBlockCanMoveRight(){
-        for(int i=0; i<activeBlock.points.length; i++){
+
+    public boolean checkIfBlockCanMoveRight() {
+        for (int i = 0; i < activeBlock.points.length; i++) {
             int y = activeBlock.points[i].y;
             int x = activeBlock.points[i].x;
-            
-            if(x == fields.length-1){
+
+            if (x == fields.length - 1) {
                 return false;
             }
         }
-            return true;  
+        return true;
     }
 
     public boolean checkIfCoordineIsActiveBlock(int testY, int testX) {
@@ -118,8 +120,6 @@ public class Board {
         }
         return false;
     }
-    
-   
 
     public boolean checkEndOfGame() {
         for (int x = 0; x < fields.length; x++) {
