@@ -13,4 +13,9 @@ public class Pyramid extends Block {
         super();
         this.points = PyramidPoints;
     }
+
+    @Override
+    public void rotate() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

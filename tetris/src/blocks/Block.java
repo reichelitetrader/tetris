@@ -2,6 +2,10 @@ package blocks;
 import java.awt.Point;
 
 public abstract class Block {
+    
+    protected Orientation orientation = Orientation.TOP;
+    // uzycie enuma zamiast cyfry 0
+    
     public Point[] points = {
         new Point(4, 0)
     };
@@ -26,4 +30,9 @@ public abstract class Block {
         }
         return points;
     }
+    
+    public abstract void rotate();
+        
+    
+    
 }

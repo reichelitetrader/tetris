@@ -13,4 +13,9 @@ public class Square extends Block {
        super();
        this.points = squarePoints;
    }
+
+    @Override
+    public void rotate() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

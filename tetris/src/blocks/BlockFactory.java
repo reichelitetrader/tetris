@@ -17,23 +17,23 @@ public class BlockFactory {
             block = new Pyramid();
         } else if ("Sguare".equals(wybor)) {
             block = new Square();
-        }
+                }
         return block;
     }
 
     public static Block createRandomBlock() {
-        Block block = new Dot();
+        Block block = new Pipe();
         int number = getRandom();
         if (number == 1) {
-            block = new Dot();
+            block = new Pipe();
         } else if (number == 2) {
-            block = new Dot();
+            block = new Pipe();
         } else if (number == 3) {
-            block = new Dot();
+            block = new Pipe();
         } else if (number == 4) {
-            block = new Dot();
+            block = new Pipe();
         } else if (number == 5) {
-            block = new Dot();
+            block = new Pipe();
         }
         return block;
     }

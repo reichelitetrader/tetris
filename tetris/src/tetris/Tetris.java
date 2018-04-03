@@ -46,7 +46,10 @@ public class Tetris {
                         board.clearActiveBlock();
                     }
                     board.activeBlock.moveDown();
+                }else if ("R".equals(zKlawiatury)){
+                    board.activeBlock.rotate();
                 }
+                
             } else if (board.checkEndOfGame()) {
                 System.out.println("koniec gry");
                 break;
