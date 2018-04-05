@@ -19,21 +19,19 @@ public class Pipe extends Block {
     @Override
     public void rotate() {
         if (Orientation.TOP == orientation) {
-            
-                Point source = points[2];
-                points[0].x = source.x;
-                points[1].x = source.x;
-                points[3].x = source.x;
-                
-                points[0].y = source.y-2; //1,4 - 3,4 
-                points[1].y = source.y-1;  //2,4 - 3,4 
-                points[3].y = source.y+1;  //4,4 - 3,4 
-                
-                        
-                
-            
-        } else if (Orientation.RIGHT == orientation) {
 
+            Point source = points[2];
+            points[0].x = source.x;
+            points[1].x = source.x;
+            points[3].x = source.x;
+
+            points[0].y = source.y - 2; //1,4 - 3,4 
+            points[1].y = source.y - 1;  //2,4 - 3,4 
+            points[3].y = source.y + 1;  //4,4 - 3,4 
+            orientation = Orientation.RIGHT;
+
+        } else if (Orientation.RIGHT == orientation) {
+            orientation = Orientation.TOP;
         }
     }
 }
