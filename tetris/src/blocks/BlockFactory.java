@@ -35,7 +35,7 @@ public class BlockFactory {
         } else if (number == 5) {
             block = new Pipe();
         }
-        return block;
+        return new L();    //  return block;
     }
       
     public static int getRandom() {
