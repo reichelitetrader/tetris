@@ -22,20 +22,20 @@ public class BlockFactory {
     }
 
     public static Block createRandomBlock() {
-        Block block = new Bolt();
+        Block block = new Pyramid();
         int number = getRandom();
         if (number == 1) {
-            block = new Bolt();
+            block = new Pyramid();
         } else if (number == 2) {
-            block = new Bolt();
+            block = new Pyramid();
         } else if (number == 3) {
-            block = new Bolt();
+            block = new Pyramid();
         } else if (number == 4) {
-            block = new Bolt();
+            block = new Pyramid();
         } else if (number == 5) {
-            block = new Bolt();
+            block = new Pyramid();
         }
-        return new Bolt();    //  return block;
+        return new Pyramid();    //  return block;
     }
       
     public static int getRandom() {
