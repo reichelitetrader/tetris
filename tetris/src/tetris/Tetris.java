@@ -2,6 +2,7 @@ package tetris;
 
 import blocks.BlockFactory;
 import boards.Board;
+import java.awt.Point;
 import java.util.Scanner;
 
 public class Tetris {
@@ -47,7 +48,10 @@ public class Tetris {
                     }
                     board.activeBlock.moveDown();
                 }else if ("R".equals(zKlawiatury)){
-                    board.activeBlock.rotate();
+                    Point[] rotatedPoints = board.activeBlock.getRotatedPoints();
+                    if(board.activeBlock.checkIfCanRotate(rotatedPoints)){
+                        
+                    }
                 }
                 
             } else if (board.checkEndOfGame()) {
@@ -56,7 +60,7 @@ public class Tetris {
             } else {
                 //board.activeBlock = new blocks.Dot();
                 board.removedFilledLines();
-                board.activeBlock = BlockFactory.createRandomBlock();
+                board.activeBlock = BlockFactory.createRandomBlock(board);
             }
             board.displayState();
             //  TimeUnit.SECONDS.sleep(1);

@@ -1,4 +1,5 @@
 package blocks;
+import boards.Board;
 import java.awt.Point;
 
 public class Square extends Block {
@@ -9,12 +10,14 @@ public class Square extends Block {
         new Point(5,1)
     };
     
-   public Square(){
-       super();
+   public Square(Board board){
+       super(board);
        this.points = squarePoints;
    }
 
     @Override
-    public void rotate() {
+    public Point[] getRotatedPoints() {
+        return this.points;
+        
     }
 }

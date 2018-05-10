@@ -6,7 +6,7 @@ import blocks.BlockFactory;
 public class Board {
 
     public static boolean[][] fields = new boolean[10][10];
-    public Block activeBlock = BlockFactory.createRandomBlock();
+    public Block activeBlock = BlockFactory.createRandomBlock(this);
 
     public Board() {
         clearBoard();
