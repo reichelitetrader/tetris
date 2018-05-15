@@ -49,10 +49,13 @@ public class Tetris {
                     board.activeBlock.moveDown();
                 }else if ("R".equals(zKlawiatury)){
                     Point[] rotatedPoints = board.activeBlock.getRotatedPoints();
+                    board.clearActiveBlock();
                     if(board.activeBlock.checkIfCanRotate(rotatedPoints)){
                         
+                        board.activeBlock.rotate();
                     }
                 }
+                
                 
             } else if (board.checkEndOfGame()) {
                 System.out.println("koniec gry");

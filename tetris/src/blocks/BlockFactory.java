@@ -23,20 +23,20 @@ public class BlockFactory {
     }
 
     public static Block createRandomBlock(Board board) {
-        Block block = new Pipe(board);
+        Block block = new Bolt(board);
         int number = getRandom();
         if (number == 1) {
-            block = new Pipe(board);
+            block = new Bolt(board);
         } else if (number == 2) {
-            block = new Pipe(board);
+            block = new Bolt(board);
         } else if (number == 3) {
-            block = new Pipe(board);
+            block = new Bolt(board);
         } else if (number == 4) {
-            block = new Pipe(board);
+            block = new Bolt(board);
         } else if (number == 5) {
-            block = new Pipe(board);
+            block = new Bolt(board);
         }
-        return new Pipe(board);    //  return block;
+        return new Bolt(board);    //  return block;
     }
       
     public static int getRandom() {

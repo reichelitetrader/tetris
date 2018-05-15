@@ -27,25 +27,29 @@ public class Pipe extends Block {
             new Point(4, 0)
         };
 
-        if (Orientation.TOP == orientation) {
+        if (Orientation.TOP == orientation || Orientation.BOTTOM == orientation) {
 
-            points[0].x = source.x;
-            points[1].x = source.x;
-            points[3].x = source.x;
+            result[0].x = source.x;
+            result[1].x = source.x;
+            result[2].x = source.x;
+            result[3].x = source.x;
 
-            points[0].y = source.y - 2; //1,4 - 3,4 
-            points[1].y = source.y - 1;  //2,4 - 3,4 
-            points[3].y = source.y + 1;  //4,4 - 3,4 
+            result[0].y = source.y - 2; //1,4 - 3,4 
+            result[1].y = source.y - 1;  //2,4 - 3,4 
+            result[2].y = source.y;
+            result[3].y = source.y + 1;  //4,4 - 3,4 
 
-        } else if (Orientation.RIGHT == orientation) {
+        } else if (Orientation.RIGHT == orientation || Orientation.LEFT == orientation) {
 
-            points[0].x = source.x - 2;
-            points[1].x = source.x - 1;
-            points[3].x = source.x + 1;
+            result[0].x = source.x - 2;
+            result[1].x = source.x - 1;
+            result[2].x = source.x;
+            result[3].x = source.x + 1;
 
-            points[0].y = source.y;
-            points[1].y = source.y;
-            points[3].y = source.y;
+            result[0].y = source.y;
+            result[1].y = source.y;
+            result[2].y = source.y;
+            result[3].y = source.y;
 
         }
         return result;

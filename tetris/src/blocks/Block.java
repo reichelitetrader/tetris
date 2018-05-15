@@ -47,15 +47,29 @@ public abstract class Block {
                     || points[i].y >= board.fields.length) {
                 return false;
             }
-            if(board.fields[points[i].x][points[i].y]){
+            if (board.fields[points[i].x][points[i].y]) {
                 return false;
             }
         }
 
         return true;
     }
-    
-    
+
+    public void rotate() {
+        this.points = this.getRotatedPoints();
+        if (orientation == Orientation.BOTTOM) {
+            orientation = Orientation.LEFT;
+        }
+        else if (orientation == Orientation.LEFT) {
+            orientation = Orientation.TOP;
+        }
+        else if (orientation == Orientation.TOP) {
+            orientation = Orientation.RIGHT;
+        }
+        else if (orientation == Orientation.RIGHT) {
+            orientation = Orientation.BOTTOM;
+        }
+    }
 
     public abstract Point[] getRotatedPoints();
 
