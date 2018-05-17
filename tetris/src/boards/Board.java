@@ -1,5 +1,4 @@
 package boards;
-
 import blocks.Block;
 import blocks.BlockFactory;
 

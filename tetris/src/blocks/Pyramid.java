@@ -1,5 +1,4 @@
 package blocks;
-
 import boards.Board;
 import java.awt.Point;
 
@@ -70,8 +69,7 @@ public class Pyramid extends Block {
             result[0].y = source.y;
             result[1].y = source.y - 1;
             result[2].y = source.y;
-            result[3].y = source.y;
-           
+            result[3].y = source.y; 
         }
         return result;
     }

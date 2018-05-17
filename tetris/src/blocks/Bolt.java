@@ -1,8 +1,6 @@
 package blocks;
-
 import boards.Board;
 import java.awt.Point;
-
 public class Bolt extends Block {
 
     public Point[] BoltPoints = {
@@ -14,7 +12,6 @@ public class Bolt extends Block {
 
     public Bolt(Board board) {
         super(board);
-
         this.points = BoltPoints;
     }
 
@@ -48,7 +45,6 @@ public class Bolt extends Block {
             result[1].y = source.y;
             result[2].y = source.y + 1;
             result[3].y = source.y + 1;
-
         }
         return result;
     }

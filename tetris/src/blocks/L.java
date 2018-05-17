@@ -1,5 +1,4 @@
 package blocks;
-
 import boards.Board;
 import java.awt.Point;
 
@@ -15,7 +14,6 @@ public class L extends Block {
     public L(Board board) {
         super(board);
         this.points = LPoints;
-        
     }
 
     @Override
@@ -29,50 +27,56 @@ public class L extends Block {
         };
 
         if (Orientation.TOP == orientation) {
-            points[0].x = source.x;
-            points[1].x = source.x;
-            points[2].x = source.x;
-            points[4].x = source.x-1;
+            result[0].x = source.x;
+            result[1].x = source.x;
+            result[2].x = source.x;
+            result[3].x = source.x;
+            result[4].x = source.x-1;
 
-            points[0].y = source.y+1;
-            points[1].y = source.y+2;
-            points[2].y = source.y+3;
-            points[4].y = source.y;
+            result[0].y = source.y+1;
+            result[1].y = source.y+2;
+            result[2].y = source.y+3;
+            result[3].y = source.y;
+            result[4].y = source.y;
             
-
         } else if (Orientation.RIGHT == orientation) {
-            points[0].x = source.x - 3;
-            points[1].x = source.x -2;
-            points[2].x = source.x - 1;
-            points[4].x = source.x;
+            result[0].x = source.x - 3;
+            result[1].x = source.x -2;
+            result[2].x = source.x - 1;
+            result[3].x = source.x;
+            result[4].x = source.x;
 
-            points[0].y = source.y;
-            points[1].y = source.y;
-            points[2].y = source.y;
-            points[4].y = source.y - 1;
+            result[0].y = source.y;
+            result[1].y = source.y;
+            result[2].y = source.y;
+            result[3].y = source.y;
+            result[4].y = source.y - 1;
             
         }else if (Orientation.BOTTOM == orientation) {
-            points[0].x = source.x;
-            points[1].x = source.x;
-            points[2].x = source.x;
-            points[4].x = source.x + 1;
+            result[0].x = source.x;
+            result[1].x = source.x;
+            result[2].x = source.x;
+            result[3].x = source.x;
+            result[4].x = source.x + 1;
 
-            points[0].y = source.y + 3;
-            points[1].y = source.y + 2;
-            points[2].y = source.y + 1;
-            points[4].y = source.y;
+            result[0].y = source.y + 3;
+            result[1].y = source.y + 2;
+            result[2].y = source.y + 1;
+            result[3].y = source.y;
+            result[4].y = source.y;
            
         } else if (Orientation.LEFT == orientation) {
-            points[0].x = source.x-3;
-            points[1].x = source.x-2;
-            points[2].x = source.x-1;
-            points[4].x = source.x;
+            result[0].x = source.x-3;
+            result[1].x = source.x-2;
+            result[2].x = source.x-1;
+            result[3].x = source.x;
+            result[4].x = source.x;
 
-            points[0].y = source.y;
-            points[1].y = source.y;
-            points[2].y = source.y;
-            points[4].y = source.y+1;
-           
+            result[0].y = source.y;
+            result[1].y = source.y;
+            result[2].y = source.y;
+            result[3].y = source.y;
+            result[4].y = source.y+1;
         }
         return result;
     }

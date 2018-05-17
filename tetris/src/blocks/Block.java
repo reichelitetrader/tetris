@@ -1,9 +1,7 @@
 package blocks;
-
 import boards.Board;
 import java.awt.Point;
-
-public abstract class Block {
+  public abstract class Block {
 
     public Board board;
     protected Orientation orientation = Orientation.TOP;
@@ -11,12 +9,10 @@ public abstract class Block {
 
     public Block(Board board) {
         this.board = board;
-
     }
 
     public Point[] points = {
         new Point(4, 0)
-
     };
 
     public Point[] moveDown() {
@@ -51,7 +47,6 @@ public abstract class Block {
                 return false;
             }
         }
-
         return true;
     }
 
@@ -70,7 +65,5 @@ public abstract class Block {
             orientation = Orientation.BOTTOM;
         }
     }
-
     public abstract Point[] getRotatedPoints();
-
 }

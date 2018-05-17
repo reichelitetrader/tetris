@@ -1,5 +1,4 @@
 package blocks;
-
 import boards.Board;
 import java.awt.Point;
 
@@ -28,7 +27,6 @@ public class Pipe extends Block {
         };
 
         if (Orientation.TOP == orientation || Orientation.BOTTOM == orientation) {
-
             result[0].x = source.x;
             result[1].x = source.x;
             result[2].x = source.x;
@@ -40,7 +38,6 @@ public class Pipe extends Block {
             result[3].y = source.y + 1;  //4,4 - 3,4 
 
         } else if (Orientation.RIGHT == orientation || Orientation.LEFT == orientation) {
-
             result[0].x = source.x - 2;
             result[1].x = source.x - 1;
             result[2].x = source.x;
@@ -50,9 +47,7 @@ public class Pipe extends Block {
             result[1].y = source.y;
             result[2].y = source.y;
             result[3].y = source.y;
-
         }
         return result;
     }
-
 }

@@ -1,8 +1,10 @@
 package blocks;
+
 import boards.Board;
 import java.util.Random;
 
 public class BlockFactory {
+
     public static Block createBlock(String wybor, Board board) {
         Block block = null;
 
@@ -18,7 +20,7 @@ public class BlockFactory {
             block = new Pyramid(board);
         } else if ("Sguare".equals(wybor)) {
             block = new Square(board);
-                }
+        }
         return block;
     }
 
@@ -26,19 +28,19 @@ public class BlockFactory {
         Block block = new Bolt(board);
         int number = getRandom();
         if (number == 1) {
-            block = new Bolt(board);
+            block = new L(board);
         } else if (number == 2) {
-            block = new Bolt(board);
+            block = new Dot(board);
         } else if (number == 3) {
-            block = new Bolt(board);
+            block = new Pipe(board);
         } else if (number == 4) {
-            block = new Bolt(board);
+            block = new Pyramid(board);
         } else if (number == 5) {
-            block = new Bolt(board);
+            block = new Square(board);
         }
-        return new Bolt(board);    //  return block;
+        return block; //  return block;
     }
-      
+
     public static int getRandom() {
         Random rand = new Random();
         return rand.nextInt(6);
