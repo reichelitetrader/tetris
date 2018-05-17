@@ -12,6 +12,7 @@ public class Tetris {
     static String playerName = "";
     int score = 0;
     static Scanner scan = new Scanner(System.in);
+    static int points = 0;
 
     public static void main(String[] args) throws InterruptedException {
         System.out.println("wprowadz imie:");
@@ -60,10 +61,19 @@ public class Tetris {
                 break;
             } else {
                 //board.activeBlock = new blocks.Dot();
-                board.removedFilledLines();
+               boolean removed = board.removedFilledLines();
+                if(removed){
+                   points = points +10; 
+                }
+                
+             
+                
+           
+                
                 board.activeBlock = BlockFactory.createRandomBlock(board);
             }
             board.displayState();
+            System.out.println("punkty:" + points);
             //  TimeUnit.SECONDS.sleep(1);
         }
     }

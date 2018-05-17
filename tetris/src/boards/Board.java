@@ -130,13 +130,17 @@ public class Board {
         return false;
     }
 
-    public void removedFilledLines() {
+    public boolean removedFilledLines() {
+        boolean isLineCleared= false;
         for (int i = 0; i < fields[0].length; i++) {
             if (isLineFilled(i)) {
                 System.out.println("wykryto wypelniona linie:");
+                
                 clearLine(i);
+                isLineCleared = true;
             }
         }
+      return isLineCleared;
     }
 
     public boolean isLineFilled(int i) {

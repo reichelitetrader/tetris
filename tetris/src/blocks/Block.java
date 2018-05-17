@@ -65,5 +65,8 @@ import java.awt.Point;
             orientation = Orientation.BOTTOM;
         }
     }
+    
+    
+    
     public abstract Point[] getRotatedPoints();
 }
