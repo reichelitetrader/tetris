@@ -39,7 +39,7 @@ public class BlockFactory {
             block = new Square(board);
         }
         
-        return new Pipe(board); //  return block;
+        return block; //  return block;
     }
 
     public static int getRandom() {
