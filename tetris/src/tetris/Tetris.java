@@ -12,6 +12,8 @@ public class Tetris {
     static String playerName = "";
     int score = 0;
     static Scanner scan = new Scanner(System.in);
+
+    //jedna linia 10, 2 linie 30 , 3 50 , 4 linie 100 pkt
     static int points = 0;
 
     public static void main(String[] args) throws InterruptedException {
@@ -48,28 +50,31 @@ public class Tetris {
                         board.clearActiveBlock();
                     }
                     board.activeBlock.moveDown();
-                }else if ("R".equals(zKlawiatury)){
+                } else if ("R".equals(zKlawiatury)) {
                     Point[] rotatedPoints = board.activeBlock.getRotatedPoints();
                     board.clearActiveBlock();
-                    if(board.activeBlock.checkIfCanRotate(rotatedPoints)){
+                    if (board.activeBlock.checkIfCanRotate(rotatedPoints)) {
                         board.activeBlock.rotate();
                     }
                 }
-                
+
             } else if (board.checkEndOfGame()) {
                 System.out.println("koniec gry");
                 break;
             } else {
                 //board.activeBlock = new blocks.Dot();
-               boolean removed = board.removedFilledLines();
-                if(removed){
-                   points = points +10; 
+                int quantityFilledLine = board.removedFilledLines();
+                if (quantityFilledLine == 1) {
+                    points = points + 10;
+
+                } else if (quantityFilledLine == 2) {
+                    points = points + 30;
+                } else if (quantityFilledLine == 3) {
+                    points = points + 50;
+                }else if (quantityFilledLine == 4){
+                    points = points + 100;
                 }
-                
-             
-                
-           
-                
+
                 board.activeBlock = BlockFactory.createRandomBlock(board);
             }
             board.displayState();

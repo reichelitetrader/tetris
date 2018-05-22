@@ -38,7 +38,8 @@ public class BlockFactory {
         } else if (number == 5) {
             block = new Square(board);
         }
-        return block; //  return block;
+        
+        return new Pipe(board); //  return block;
     }
 
     public static int getRandom() {
