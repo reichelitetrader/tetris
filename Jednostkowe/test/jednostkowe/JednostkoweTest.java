@@ -102,7 +102,8 @@ public class JednostkoweTest {
         assertEquals(10.0, Jednostkowe.Avg(new double[]{5, 15}), 0.0);
         assertEquals(15.0, Jednostkowe.Avg(new double[]{10, 20}), 0.0);
         assertEquals(20.0, Jednostkowe.Avg(new double[]{10, 20,30}), 0.0);
-
+        assertEquals(0.0, Jednostkowe.Avg(new double[]{-10, 20,-10}), 0.0);
+        assertEquals(10.0, Jednostkowe.Avg(new double[]{10}), 0.0);
     }
 
 }
