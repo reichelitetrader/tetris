@@ -63,20 +63,20 @@ public class JednostkoweTest {
 
     @Test
     public void testPower() {
-         System.out.println("power");
-        assertEquals(1,Jednostkowe.Power(2, 0));
-        assertEquals(2,Jednostkowe.Power(2, 1));
+        System.out.println("power");
+        assertEquals(1, Jednostkowe.Power(2, 0));
+        assertEquals(2, Jednostkowe.Power(2, 1));
         assertEquals(4, Jednostkowe.Power(2, 2));
-        assertEquals(8,Jednostkowe.Power(2, 3));
-        assertEquals(16,Jednostkowe.Power(2, 4));
-        assertEquals(9,Jednostkowe.Power(3, 2));
-        assertEquals(27,Jednostkowe.Power(3, 3));
-        assertEquals(81,Jednostkowe.Power(3, 4));  
+        assertEquals(8, Jednostkowe.Power(2, 3));
+        assertEquals(16, Jednostkowe.Power(2, 4));
+        assertEquals(9, Jednostkowe.Power(3, 2));
+        assertEquals(27, Jednostkowe.Power(3, 3));
+        assertEquals(81, Jednostkowe.Power(3, 4));
     }
 
     @Test
     public void testSilnia() {
-         System.out.println("silnia");
+        System.out.println("silnia");
         assertEquals(1, Jednostkowe.Silnia(0));
         assertEquals(1, Jednostkowe.Silnia(1));
         assertEquals(2, Jednostkowe.Silnia(2));
@@ -86,17 +86,23 @@ public class JednostkoweTest {
         assertEquals(720, Jednostkowe.Silnia(6));
         assertEquals(5040, Jednostkowe.Silnia(7));
     }
-    
+
     @Test
-    public void testChangeLettersCase(){
+    public void testChangeLettersCase() {
         System.out.println("changing letters");
-        assertEquals("aLa mA KoTa",Jednostkowe.Letters("ALA MA KOTA") );
-        
-        assertEquals("aLa mA KoTa",Jednostkowe.Letters("AlA Ma kOtA") );
-        
-        assertEquals("aLa mA KoTa",Jednostkowe.Letters("ala ma kota"));
-       
-       
+        assertEquals("aLa mA KoTa", Jednostkowe.Letters("ALA MA KOTA"));
+        assertEquals("aLa mA KoTa", Jednostkowe.Letters("AlA Ma kOtA"));
+        assertEquals("aLa mA KoTa", Jednostkowe.Letters("ala ma kota"));
+
+    }
+
+    @Test
+    public void testAverage() {
+        System.out.println("average");
+        assertEquals(10.0, Jednostkowe.Avg(new double[]{5, 15}), 0.0);
+        assertEquals(15.0, Jednostkowe.Avg(new double[]{10, 20}), 0.0);
+        assertEquals(20.0, Jednostkowe.Avg(new double[]{10, 20,30}), 0.0);
+
     }
 
 }

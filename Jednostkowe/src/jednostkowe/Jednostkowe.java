@@ -39,7 +39,8 @@ public class Jednostkowe {
                 String lowLetter = String.valueOf(characters[i]).toLowerCase();
                 characters[i] = lowLetter.charAt(0);
 
-            }if(i % 2 != 0){
+            }
+            if (i % 2 != 0) {
                 String upperLetter = String.valueOf(characters[i]).toUpperCase();
                 characters[i] = upperLetter.charAt(0);
             }
@@ -48,6 +49,26 @@ public class Jednostkowe {
         return String.valueOf(characters);
     }
 
+    public static double Avg(double[] liczby) {
+        double suma = 0;
+        double srednia = 0;
+        double size = liczby.length;
+
+        for (int i = 0; i < liczby.length; i++) {
+            suma = suma + liczby[i];
+
+        }
+        return suma / size;
+    }
+
     public static void main(String[] args) {
+        double a = 0.1 + 0.2;
+        double b = 0.3;
+
+        if (a == b) {
+            System.out.println("ok");
+        } else {
+            System.out.println("nie ok");
+        }
     }
 }
