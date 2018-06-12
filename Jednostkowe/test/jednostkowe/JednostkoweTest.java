@@ -113,13 +113,13 @@ public class JednostkoweTest {
         assertEquals(10, Jednostkowe.wAvg(new double[]{5, 15}, new double[]{2, 2}), 0.0);
         assertEquals(7.5, Jednostkowe.wAvg(new double[]{0, 15}, new double[]{2, 2}), 0.0);
         assertEquals(4.25, Jednostkowe.wAvg(new double[]{3, 5}, new double[]{3, 5}), 0.0);
+        assertEquals(-4.25, Jednostkowe.wAvg(new double[]{-3, -5}, new double[]{3, 5}), 0.0);
         //assertEquals(7.5, Jednostkowe.wAvg(new double[]{0, 15}, new double[]{ 2}), 0.0);
        
-        /*dane wejsciowe (3,5)
+        /*dane wejsciowe (-3,-5)
         wagi wejsciowe (3,5)
-        3*3+ 5*5 = 34
-        3+5 = 8 suma wag
-        34/8 = 4,2
+        -3 * 3 + -5 * 5 = -9 -25 = -34
+        -34/8 = -4,25
         */
         
     }
