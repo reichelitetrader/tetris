@@ -12,7 +12,7 @@ public class Jednostkowe {
         return (int) result;
     }
 
-    public static int Power(int podstawa, int wykladnik) {
+    public static int power(int podstawa, int wykladnik) {
         int result = podstawa;
         if (wykladnik == 0) {
             result = 1;
@@ -23,7 +23,7 @@ public class Jednostkowe {
         return result;
     }
 
-    public static int Silnia(int n) {
+    public static int silnia(int n) {
         int iloczyn = 1;
         for (int i = 1; i <= n; i++) {
             iloczyn = iloczyn * i;
@@ -31,7 +31,7 @@ public class Jednostkowe {
         return iloczyn;
     }
 
-    public static String Letters(String name) {
+    public static String letters(String name) {
         String result = "";
         char[] characters = name.toCharArray();
         for (int i = name.length() - 1; i >= 0; i--) {
@@ -49,7 +49,7 @@ public class Jednostkowe {
         return String.valueOf(characters);
     }
 
-    public static double Avg(double[] liczby) {
+    public static double avg(double[] liczby) {
         double suma = 0;
         double srednia = 0;
         double size = liczby.length;
@@ -59,6 +59,40 @@ public class Jednostkowe {
 
         }
         return suma / size;
+    }
+    
+    public static double wAvg(double[] liczby, double []wartosciWagi){
+        double suma = 0;
+        double srednia_wazona = 0;
+        double sumaWag = 0;
+        
+        for(int i=0; i<wartosciWagi.length; i++){
+           sumaWag =  sumaWag + wartosciWagi[i]; 
+        }
+        
+        
+        for(int i=0; i<liczby.length; i++){
+            srednia_wazona = srednia_wazona + (liczby[i] * wartosciWagi[i]);
+            
+        }
+        srednia_wazona = srednia_wazona / sumaWag;
+       /* 
+        liczby * wagi/ sume wag
+        1)dane wejsciowe (5,15)
+        wagi wejsciowe (2,1)
+        5*2 + 15* 1 = 25
+        2+1 = 3
+        25/3 = 8,3
+        
+        2)dane wejsciowe (5,15)
+        wagi wejsciowe (2,2)
+        5*2 + 15*2 = 40
+        2+2 = 4 suma wag
+        40/4 = 10
+        
+       */
+       
+       return srednia_wazona;
     }
 
     public static void main(String[] args) {

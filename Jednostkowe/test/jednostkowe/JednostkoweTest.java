@@ -64,46 +64,64 @@ public class JednostkoweTest {
     @Test
     public void testPower() {
         System.out.println("power");
-        assertEquals(1, Jednostkowe.Power(2, 0));
-        assertEquals(2, Jednostkowe.Power(2, 1));
-        assertEquals(4, Jednostkowe.Power(2, 2));
-        assertEquals(8, Jednostkowe.Power(2, 3));
-        assertEquals(16, Jednostkowe.Power(2, 4));
-        assertEquals(9, Jednostkowe.Power(3, 2));
-        assertEquals(27, Jednostkowe.Power(3, 3));
-        assertEquals(81, Jednostkowe.Power(3, 4));
+        assertEquals(1, Jednostkowe.power(2, 0));
+        assertEquals(2, Jednostkowe.power(2, 1));
+        assertEquals(4, Jednostkowe.power(2, 2));
+        assertEquals(8, Jednostkowe.power(2, 3));
+        assertEquals(16, Jednostkowe.power(2, 4));
+        assertEquals(9, Jednostkowe.power(3, 2));
+        assertEquals(27, Jednostkowe.power(3, 3));
+        assertEquals(81, Jednostkowe.power(3, 4));
     }
 
     @Test
     public void testSilnia() {
         System.out.println("silnia");
-        assertEquals(1, Jednostkowe.Silnia(0));
-        assertEquals(1, Jednostkowe.Silnia(1));
-        assertEquals(2, Jednostkowe.Silnia(2));
-        assertEquals(6, Jednostkowe.Silnia(3));
-        assertEquals(24, Jednostkowe.Silnia(4));
-        assertEquals(120, Jednostkowe.Silnia(5));
-        assertEquals(720, Jednostkowe.Silnia(6));
-        assertEquals(5040, Jednostkowe.Silnia(7));
+        assertEquals(1, Jednostkowe.silnia(0));
+        assertEquals(1, Jednostkowe.silnia(1));
+        assertEquals(2, Jednostkowe.silnia(2));
+        assertEquals(6, Jednostkowe.silnia(3));
+        assertEquals(24, Jednostkowe.silnia(4));
+        assertEquals(120, Jednostkowe.silnia(5));
+        assertEquals(720, Jednostkowe.silnia(6));
+        assertEquals(5040, Jednostkowe.silnia(7));
     }
 
     @Test
     public void testChangeLettersCase() {
         System.out.println("changing letters");
-        assertEquals("aLa mA KoTa", Jednostkowe.Letters("ALA MA KOTA"));
-        assertEquals("aLa mA KoTa", Jednostkowe.Letters("AlA Ma kOtA"));
-        assertEquals("aLa mA KoTa", Jednostkowe.Letters("ala ma kota"));
+        assertEquals("aLa mA KoTa", Jednostkowe.letters("ALA MA KOTA"));
+        assertEquals("aLa mA KoTa", Jednostkowe.letters("AlA Ma kOtA"));
+        assertEquals("aLa mA KoTa", Jednostkowe.letters("ala ma kota"));
 
     }
 
     @Test
     public void testAverage() {
         System.out.println("average");
-        assertEquals(10.0, Jednostkowe.Avg(new double[]{5, 15}), 0.0);
-        assertEquals(15.0, Jednostkowe.Avg(new double[]{10, 20}), 0.0);
-        assertEquals(20.0, Jednostkowe.Avg(new double[]{10, 20,30}), 0.0);
-        assertEquals(0.0, Jednostkowe.Avg(new double[]{-10, 20,-10}), 0.0);
-        assertEquals(10.0, Jednostkowe.Avg(new double[]{10}), 0.0);
+        assertEquals(10.0, Jednostkowe.avg(new double[]{5, 15}), 0.0);
+        assertEquals(15.0, Jednostkowe.avg(new double[]{10, 20}), 0.0);
+        assertEquals(20.0, Jednostkowe.avg(new double[]{10, 20, 30}), 0.0);
+        assertEquals(0.0, Jednostkowe.avg(new double[]{-10, 20, -10}), 0.0);
+        assertEquals(10.0, Jednostkowe.avg(new double[]{10}), 0.0);
+        //testy implementacja funkcji srednia wazona, 2 parametry wejsciowe, 1 wartosci, 2wagi
+    }
+
+    @Test
+    public void testWaverage() {
+        System.out.println("wAverage");
+        assertEquals(10, Jednostkowe.wAvg(new double[]{5, 15}, new double[]{2, 2}), 0.0);
+        assertEquals(7.5, Jednostkowe.wAvg(new double[]{0, 15}, new double[]{2, 2}), 0.0);
+        assertEquals(4.25, Jednostkowe.wAvg(new double[]{3, 5}, new double[]{3, 5}), 0.0);
+        //assertEquals(7.5, Jednostkowe.wAvg(new double[]{0, 15}, new double[]{ 2}), 0.0);
+       
+        /*dane wejsciowe (3,5)
+        wagi wejsciowe (3,5)
+        3*3+ 5*5 = 34
+        3+5 = 8 suma wag
+        34/8 = 4,2
+        */
+        
     }
 
 }
