@@ -99,6 +99,23 @@ public class Jednostkowe {
          */
         return srednia_wazona;
     }
+    
+    
+    public static int[] oddNumbers(int from, int to){
+        int size = (to-from)/2;
+        int odCounter = 0;
+        int[]liczby = new int[size+1];
+        for(int i=from; i<=to; i++){
+            if(i%2 == 0){
+                liczby[odCounter] = i;
+                odCounter++;
+            }
+                
+            
+        }
+        
+        return liczby;
+    }
 
     public static void main(String[] args) {
         double a = 0.1 + 0.2;

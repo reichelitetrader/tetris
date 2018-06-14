@@ -129,5 +129,11 @@ public class JednostkoweTest {
        System.out.println("AverageExceptions"); 
        assertEquals(7.5, Jednostkowe.wAvg(new double[]{0, 15}, new double[]{ 2}), 0.0);
     }
+    
+    @Test
+    public void oddNumbers(){
+        System.out.println("oddNumbers"); 
+        assertArrayEquals(new int[]{2,4,6,8,10},Jednostkowe.oddNumbers(1,10));
+    }
 
 }
