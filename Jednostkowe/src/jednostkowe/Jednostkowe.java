@@ -60,8 +60,8 @@ public class Jednostkowe {
         }
         return suma / size;
     }
-    
-    public static double wAvg(double[] liczby, double []wartosciWagi){
+    //wyjatki kontrolowane dodajemy w deklaracji metody
+    public static double wAvg(double[] liczby, double []wartosciWagi) throws ArraySizeNotEqualsException{
         double suma = 0;
         double srednia_wazona = 0;
         double sumaWag = 0;
@@ -72,10 +72,19 @@ public class Jednostkowe {
         
         
         for(int i=0; i<liczby.length; i++){
+            if(liczby.length == wartosciWagi.length){
+           
+        }else if(liczby.length != wartosciWagi.length){
+           throw new ArraySizeNotEqualsException();
+        }
+            
+            
             srednia_wazona = srednia_wazona + (liczby[i] * wartosciWagi[i]);
             
         }
         srednia_wazona = srednia_wazona / sumaWag;
+        
+        
        /* 
         liczby * wagi/ sume wag
         1)dane wejsciowe (5,15)
@@ -94,6 +103,9 @@ public class Jednostkowe {
        
        return srednia_wazona;
     }
+    
+    
+    
 
     public static void main(String[] args) {
         double a = 0.1 + 0.2;

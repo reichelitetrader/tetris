@@ -108,13 +108,12 @@ public class JednostkoweTest {
     }
 
     @Test
-    public void testWaverage() {
+    public void testWaverage() throws ArraySizeNotEqualsException {
         System.out.println("wAverage");
         assertEquals(10, Jednostkowe.wAvg(new double[]{5, 15}, new double[]{2, 2}), 0.0);
         assertEquals(7.5, Jednostkowe.wAvg(new double[]{0, 15}, new double[]{2, 2}), 0.0);
         assertEquals(4.25, Jednostkowe.wAvg(new double[]{3, 5}, new double[]{3, 5}), 0.0);
         assertEquals(-4.25, Jednostkowe.wAvg(new double[]{-3, -5}, new double[]{3, 5}), 0.0);
-        //assertEquals(7.5, Jednostkowe.wAvg(new double[]{0, 15}, new double[]{ 2}), 0.0);
        
         /*dane wejsciowe (-3,-5)
         wagi wejsciowe (3,5)
@@ -122,6 +121,13 @@ public class JednostkoweTest {
         -34/8 = -4,25
         */
         
+    }
+    //wyjatki niekontrolowane nie trzeba obslugiwac
+    @Test(expected = ArraySizeNotEqualsException.class)
+    
+    public void avgExceptions() throws ArraySizeNotEqualsException{
+       System.out.println("AverageExceptions"); 
+       assertEquals(7.5, Jednostkowe.wAvg(new double[]{0, 15}, new double[]{ 2}), 0.0);
     }
 
 }
