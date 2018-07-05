@@ -1,5 +1,8 @@
 package jednostkowe;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Jednostkowe {
 
     public static int add(int liczbaA, int liczbaB) {
@@ -45,7 +48,6 @@ public class Jednostkowe {
                 characters[i] = upperLetter.charAt(0);
             }
         }
-
         return String.valueOf(characters);
     }
 
@@ -56,7 +58,6 @@ public class Jednostkowe {
 
         for (int i = 0; i < liczby.length; i++) {
             suma = suma + liczby[i];
-
         }
         return suma / size;
     }
@@ -70,18 +71,13 @@ public class Jednostkowe {
         for (int i = 0; i < wartosciWagi.length; i++) {
             sumaWag = sumaWag + wartosciWagi[i];
         }
-
         for (int i = 0; i < liczby.length; i++) {
             if (liczby.length != wartosciWagi.length) {
-
                 throw new ArraySizeNotEqualsException();
             }
-
             srednia_wazona = srednia_wazona + (liczby[i] * wartosciWagi[i]);
-
         }
         srednia_wazona = srednia_wazona / sumaWag;
-
         /* 
         liczby * wagi/ sume wag
         1)dane wejsciowe (5,15)
@@ -99,22 +95,77 @@ public class Jednostkowe {
          */
         return srednia_wazona;
     }
-    
-    
-    public static int[] oddNumbers(int from, int to){
-        int size = (to-from)/2;
+    //Funkcja oddNumbers zwraca liczby nieparzyste na tablicach 
+//    public static int[] oddNumbers(int from, int to){
+//        int size = (to-from)/2;
+//        int odCounter = 0;
+//        int[]liczby = new int[size+1];
+//        for(int i=from; i<=to; i++){
+//            if(i%2 == 0){
+//                liczby[odCounter] = i;
+//                odCounter++;
+//            } 
+//       }
+//        return liczby;
+//    }
+
+//Funkcja returnEvenNumbers zwraca liczby parzyste z podanego zakresu
+    public static List returnEvenNumbers(int index, int element) {
         int odCounter = 0;
-        int[]liczby = new int[size+1];
-        for(int i=from; i<=to; i++){
-            if(i%2 == 0){
+        List list = new ArrayList();
+        for (int i = index; i <= element; i++) {
+            if (i % 2 == 0) {
+                list.add(i);
+                odCounter++;
+            }
+        }
+        return list;
+    }
+
+//Funkcja addOddNumbers zwraca liczby nieparzyste z podanego zakresu 
+//    public static List addOddNumbers(int index,int element){
+//        int size = (index - element)/2;
+//        int odCounter = 0;
+//        List list = new ArrayList();
+//        for(int i=index; i<=element; i++){
+//            if(i%2 == 0){
+//                list.add(i);
+//                odCounter++;
+//            }
+//        }
+//        return list;
+//    }
+//Napisac metode zwracajaca liczby nieparzyste na tablicach i na listach zwracaja liczby parzyste i testy  
+    //funkcja returnOddNumbers zwraca liczby nieparzyste na tablicach z podanego zakresu
+    public static int[] returnOddNumbers(int from, int to) {
+        int size = (to - from) / 2;
+        int odCounter = 0;
+        int[] liczby = new int[size + 1];
+        for (int i = from; i <= to; i++) {
+            if (i % 2 != 0) {
                 liczby[odCounter] = i;
                 odCounter++;
             }
-                
-            
         }
-        
         return liczby;
+    }
+
+    public static String getVowel(String text) {
+        String result = "";
+        for (int i = text.length(); i > 0; i++) {
+            char letter = text.charAt(i);
+            if (checkVowel(letter)) {
+                result = result + letter;
+            }
+        }
+        return result;
+    }
+
+    public static boolean checkVowel(char letter) {
+        return letter == 'A' || letter == 'a' || letter == 'e'
+                || letter == 'E' || letter == 'i' || letter == 'I' || letter == 'o'
+                || letter == 'O' || letter == 'u' || letter == 'U';
+
     }
 
     public static void main(String[] args) {

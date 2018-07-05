@@ -1,5 +1,8 @@
 package jednostkowe;
 
+import java.util.Arrays;
+import java.util.List;
+import static org.hamcrest.CoreMatchers.is;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -93,7 +96,6 @@ public class JednostkoweTest {
         assertEquals("aLa mA KoTa", Jednostkowe.letters("ALA MA KOTA"));
         assertEquals("aLa mA KoTa", Jednostkowe.letters("AlA Ma kOtA"));
         assertEquals("aLa mA KoTa", Jednostkowe.letters("ala ma kota"));
-
     }
 
     @Test
@@ -104,7 +106,6 @@ public class JednostkoweTest {
         assertEquals(20.0, Jednostkowe.avg(new double[]{10, 20, 30}), 0.0);
         assertEquals(0.0, Jednostkowe.avg(new double[]{-10, 20, -10}), 0.0);
         assertEquals(10.0, Jednostkowe.avg(new double[]{10}), 0.0);
-        //testy implementacja funkcji srednia wazona, 2 parametry wejsciowe, 1 wartosci, 2wagi
     }
 
     @Test
@@ -114,26 +115,69 @@ public class JednostkoweTest {
         assertEquals(7.5, Jednostkowe.wAvg(new double[]{0, 15}, new double[]{2, 2}), 0.0);
         assertEquals(4.25, Jednostkowe.wAvg(new double[]{3, 5}, new double[]{3, 5}), 0.0);
         assertEquals(-4.25, Jednostkowe.wAvg(new double[]{-3, -5}, new double[]{3, 5}), 0.0);
-       
-        /*dane wejsciowe (-3,-5)
-        wagi wejsciowe (3,5)
-        -3 * 3 + -5 * 5 = -9 -25 = -34
-        -34/8 = -4,25
-        */
-        
+        //dane wejsciowe (-3,-5) , wagi wejsciowe (3,5)
+        //-3 * 3 + -5 * 5 = -9 -25 = -34     , -34/8 = -4,25
     }
+
     //wyjatki niekontrolowane nie trzeba obslugiwac
     @Test(expected = ArraySizeNotEqualsException.class)
-    
-    public void avgExceptions() throws ArraySizeNotEqualsException{
-       System.out.println("AverageExceptions"); 
-       assertEquals(7.5, Jednostkowe.wAvg(new double[]{0, 15}, new double[]{ 2}), 0.0);
+
+    public void avgExceptions() throws ArraySizeNotEqualsException {
+        System.out.println("AverageExceptions");
+        assertEquals(7.5, Jednostkowe.wAvg(new double[]{0, 15}, new double[]{2}), 0.0);
+    }
+//
+//    //Funkcja oddNumbers zwracająca tablicę
+//    @Test
+//    public void oddNumbers(){
+//        System.out.println("oddNumbers"); 
+//        assertArrayEquals(new int[]{2,4,6,8,10},Jednostkowe.oddNumbers(1,10));
+//    }
+//    
+//Funkcjsa addOddNumber zwracająca listę 
+//    @Test
+//    public void addOddNumber() { 
+//        List actual = Jednostkowe.addOddNumbers(1, 10);
+//        List expected = Arrays.asList(2, 4, 6, 8, 10);
+//        System.out.println("addOddNumbers");
+//        assertThat(actual, is(expected));
+//    }
+
+    @Test
+    public void returnOddNumbers() {
+        System.out.println("returnOddNumbers");
+        assertArrayEquals(new int[]{1, 3, 5, 7, 9}, Jednostkowe.returnOddNumbers(1, 10));
+    }
+
+    @Test
+    public void returnEvenNumbers() {
+        System.out.println("returnEvenNumbers");
+        List actual = Jednostkowe.returnEvenNumbers(1, 10);
+        List expected =  Arrays.asList(2,4,6,8,10);
+        assertThat(actual, is(expected));
+
     }
     
     @Test
-    public void oddNumbers(){
-        System.out.println("oddNumbers"); 
-        assertArrayEquals(new int[]{2,4,6,8,10},Jednostkowe.oddNumbers(1,10));
+    public void returnVowelInLetter(){
+        System.out.println("returnVowel");
+        assertEquals("ai", Jednostkowe.getVowel("napis"));
+        
+}
+    
+    
+    @Test
+    public void checkVowelTest(){
+       System.out.println("checkVowelTest");
+       assertTrue(Jednostkowe.checkVowel('a'));
+       assertTrue(Jednostkowe.checkVowel('A'));
+       assertTrue(Jednostkowe.checkVowel('e'));
+       assertTrue(Jednostkowe.checkVowel('E'));
+       assertFalse(Jednostkowe.checkVowel('z'));
+       assertFalse(Jednostkowe.checkVowel('Z'));
+       assertFalse(Jednostkowe.checkVowel('K'));
+       assertFalse(Jednostkowe.checkVowel('k'));
+       
+       
     }
-
 }
