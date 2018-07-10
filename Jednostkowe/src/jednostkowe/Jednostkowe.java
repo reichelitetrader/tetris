@@ -152,7 +152,7 @@ public class Jednostkowe {
 
     public static String getVowel(String text) {
         String result = "";
-        for (int i = text.length(); i > 0; i++) {
+        for (int i = text.length(); i > 0; i--) {
             char letter = text.charAt(i);
             if (checkVowel(letter)) {
                 result = result + letter;
