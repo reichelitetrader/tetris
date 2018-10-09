@@ -2,8 +2,11 @@ package tetris;
 
 import blocks.BlockFactory;
 import boards.Board;
+import java.awt.Dimension;
 import java.awt.Point;
 import java.util.Scanner;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 public class Tetris {
 
@@ -12,11 +15,18 @@ public class Tetris {
     static String playerName = "";
     int score = 0;
     static Scanner scan = new Scanner(System.in);
+    private Window window = null;
 
     //jedna linia 10, 2 linie 30 , 3 50 , 4 linie 100 pkt
     static int points = 0;
 
+    public Tetris() {
+        this.window = new Window(board);
+    }
+
     public static void main(String[] args) throws InterruptedException {
+        Tetris tetris = new Tetris();
+
         System.out.println("wprowadz imie:");
         playerName = scan.nextLine();
         System.out.println("rozpoczynasz nowa gre:");
@@ -71,7 +81,7 @@ public class Tetris {
                     points = points + 30;
                 } else if (quantityFilledLine == 3) {
                     points = points + 50;
-                }else if (quantityFilledLine == 4){
+                } else if (quantityFilledLine == 4) {
                     points = points + 100;
                 }
 
