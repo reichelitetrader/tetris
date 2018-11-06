@@ -45,4 +45,23 @@ public class Window extends JFrame {
         frame.setSize(400, 600);
 
     }
+
+    public void paintBoard() {
+        for (int i = 0; i < Board.fields.length; i++) {
+            for (int j = 0; j < Board.fields.length; j++) {
+                if (Board.fields[i][j] == true) {
+                    buttons[i][j].setText("X");
+                }
+            }
+
+        }
+    }
+
+    public void clearButtons() {
+        for (int i = 0; i < this.buttons.length; i++) {
+            for (int j = 0; j < this.buttons.length; j++) {
+                buttons[i][j].setText(" ");
+            }
+        }
+    }
 }
