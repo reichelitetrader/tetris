@@ -1,6 +1,7 @@
 package tetris;
 
 import boards.Board;
+import static boards.Board.fields;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -48,6 +49,7 @@ public class Window extends JFrame {
 
     public void paintBoard() {
         for (int i = 0; i < Board.fields.length; i++) {
+
             for (int j = 0; j < Board.fields.length; j++) {
                 if (Board.fields[i][j] == true) {
                     buttons[i][j].setText("X");

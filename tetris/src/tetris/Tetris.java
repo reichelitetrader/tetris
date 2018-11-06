@@ -21,7 +21,6 @@ public class Tetris {
     static int points = 0;
 
     public Tetris() {
-
     }
 
     public static void main(String[] args) throws InterruptedException {
