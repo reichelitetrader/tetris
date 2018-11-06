@@ -15,18 +15,18 @@ public class Tetris {
     static String playerName = "";
     int score = 0;
     static Scanner scan = new Scanner(System.in);
-    private Window window = null;
+    private static Window window = null;
 
     //jedna linia 10, 2 linie 30 , 3 50 , 4 linie 100 pkt
     static int points = 0;
 
     public Tetris() {
-        this.window = new Window(board);
+        
     }
 
     public static void main(String[] args) throws InterruptedException {
-        Tetris tetris = new Tetris();
-
+//        Tetris tetris = new Tetris();
+window = new Window(board);
         System.out.println("wprowadz imie:");
         playerName = scan.nextLine();
         System.out.println("rozpoczynasz nowa gre:");
@@ -88,6 +88,8 @@ public class Tetris {
                 board.activeBlock = BlockFactory.createRandomBlock(board);
             }
             board.displayState();
+//            Tetris.window.clearButtons();
+//            Tetris.window.paintBoard();
             System.out.println("punkty:" + points);
             //  TimeUnit.SECONDS.sleep(1);
         }

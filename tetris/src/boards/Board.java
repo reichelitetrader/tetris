@@ -44,6 +44,7 @@ public class Board {
     public void displayState() {
         System.out.println("ponizej stan planszy:");
         drawActiveBlock();
+        
         for (int i = 0; i < fields.length; i++) {
             System.out.print("|");
             for (int j = 0; j < fields.length; j++) {
