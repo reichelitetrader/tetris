@@ -21,12 +21,11 @@ public class Tetris {
     static int points = 0;
 
     public Tetris() {
-        
     }
 
     public static void main(String[] args) throws InterruptedException {
 //        Tetris tetris = new Tetris();
-window = new Window(board);
+        window = new Window(board);
         System.out.println("wprowadz imie:");
         playerName = scan.nextLine();
         System.out.println("rozpoczynasz nowa gre:");
@@ -88,8 +87,8 @@ window = new Window(board);
                 board.activeBlock = BlockFactory.createRandomBlock(board);
             }
             board.displayState();
-//            Tetris.window.clearButtons();
-//            Tetris.window.paintBoard();
+            window.clearButtons();
+            window.paintBoard();
             System.out.println("punkty:" + points);
             //  TimeUnit.SECONDS.sleep(1);
         }
