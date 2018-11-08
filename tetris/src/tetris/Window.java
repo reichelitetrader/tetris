@@ -17,7 +17,10 @@ public class Window extends JFrame {
 
     public Window(Board board) {
         this.board = board;
-        final JPanel buttonsPanel = new JPanel();
+        final TetrisPanel buttonsPanel = new TetrisPanel();
+        this.addKeyListener(buttonsPanel);
+        buttonsPanel.addKeyListener(buttonsPanel);
+        buttonsPanel.setFocusable(true);
         JFrame frame = this;
 
         GridLayout Layout = new GridLayout(0, 1);
