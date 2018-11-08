@@ -3,6 +3,7 @@ package tetris;
 import boards.Board;
 import static boards.Board.fields;
 import java.awt.GridLayout;
+import static java.awt.SystemColor.window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -17,7 +18,8 @@ public class Window extends JFrame {
 
     public Window(Board board) {
         this.board = board;
-        final TetrisPanel buttonsPanel = new TetrisPanel();
+        final TetrisPanel buttonsPanel = new TetrisPanel(board, this);
+        
         this.addKeyListener(buttonsPanel);
         buttonsPanel.addKeyListener(buttonsPanel);
         buttonsPanel.setFocusable(true);
