@@ -1,28 +1,21 @@
 package tetris;
-
 import blocks.BlockFactory;
 import boards.Board;
-import java.awt.Dimension;
 import java.awt.Point;
 import java.util.Scanner;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 
 public class Tetris {
-
     int moveNumber = 0;
     static Board board = new Board();
     static String playerName = "";
     int score = 0;
     static Scanner scan = new Scanner(System.in);
     private static Window window = null;
-
     //jedna linia 10, 2 linie 30 , 3 50 , 4 linie 100 pkt
     static int points = 0;
-
+    
     public Tetris() {
     }
-
     public static void main(String[] args) throws InterruptedException {
 //        Tetris tetris = new Tetris();
         window = new Window(board);
@@ -48,7 +41,7 @@ public class Tetris {
                     if (!board.checkIfBlockFallDown()) {
                         board.clearActiveBlock();
                     }
-
+                    
                     if (board.checkIfBlockCanMoveRight()) {
                         board.activeBlock.moveDown();
                         board.activeBlock.moveRight();
@@ -83,14 +76,12 @@ public class Tetris {
                 } else if (quantityFilledLine == 4) {
                     points = points + 100;
                 }
-
                 board.activeBlock = BlockFactory.createRandomBlock(board);
             }
             board.displayState();
             window.clearButtons();
             window.paintBoard();
             System.out.println("punkty:" + points);
-            //  TimeUnit.SECONDS.sleep(1);
         }
     }
 }

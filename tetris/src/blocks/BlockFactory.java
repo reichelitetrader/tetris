@@ -1,5 +1,4 @@
 package blocks;
-
 import boards.Board;
 import java.util.Random;
 

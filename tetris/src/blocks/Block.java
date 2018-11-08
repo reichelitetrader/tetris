@@ -4,8 +4,7 @@ import java.awt.Point;
   public abstract class Block {
 
     public Board board;
-    protected Orientation orientation = Orientation.TOP;
-    // uzycie enuma zamiast cyfry 0
+    protected Orientation orientation = Orientation.TOP; // uzycie enuma zamiast cyfry 0
 
     public Block(Board board) {
         this.board = board;
@@ -65,8 +64,6 @@ import java.awt.Point;
             orientation = Orientation.BOTTOM;
         }
     }
-    
-    
     
     public abstract Point[] getRotatedPoints();
 }

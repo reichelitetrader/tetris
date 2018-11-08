@@ -3,7 +3,6 @@ import blocks.Block;
 import blocks.BlockFactory;
 
 public class Board {
-
     public static boolean[][] fields = new boolean[10][10];
     public Block activeBlock = BlockFactory.createRandomBlock(this);
 
@@ -25,7 +24,6 @@ public class Board {
         }
         for (int i = lineNumber; i > 0; i--) {
             for (int j = fields[i].length - 1; j > 0; j--) {
-
                 fields[i][j] = fields[i - 1][j];
             }
         }
@@ -57,7 +55,6 @@ public class Board {
             System.out.print("|");
             System.out.println();
         }
-        
     }
 
     private void drawActiveBlock() {
@@ -65,13 +62,10 @@ public class Board {
             int x = activeBlock.points[i].x;
             int y = activeBlock.points[i].y;
             if (y < fields.length && x < fields.length) {
-
                 fields[y][x] = true;
             }
         }
     }
-    
-    
 
     public boolean checkIfBlockFallDown() {
         for (int i = 0; i < activeBlock.points.length; i++) {
@@ -91,7 +85,6 @@ public class Board {
         for (int i = 0; i < activeBlock.points.length; i++) {
             int y = activeBlock.points[i].y;
             int x = activeBlock.points[i].x;
-
             if (x == 0) {
                 return false;
             }
@@ -136,7 +129,6 @@ public class Board {
         for (int i = 0; i < fields[0].length; i++) {
             if (isLineFilled(i)) {
                 System.out.println("wykryto wypelniona linie:");
-                
                 clearLine(i);
                 quantityFilledLine++;
             }
