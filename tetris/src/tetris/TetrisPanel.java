@@ -27,35 +27,20 @@ private Window window = null;
             SwingUtilities.invokeLater(()->{ 
             board.activeBlock.moveLeft();
             board.activeBlock.moveDown();
-            board.clearBoard();
-            window.clearButtons();
-            board.displayState();
-            window.paintBoard();
-            window.repaint();
-            window.getContentPane().repaint();
+            redundantMetod();
             });
             break;
         case KeyEvent.VK_D:
             SwingUtilities.invokeLater(()->{ 
             board.activeBlock.moveRight();
             board.activeBlock.moveDown();
-            board.clearBoard();
-            window.clearButtons();
-            board.displayState();
-            window.paintBoard();
-            window.repaint();
-            window.getContentPane().repaint();
+            redundantMetod();
             });
             break; 
         case KeyEvent.VK_S:
             SwingUtilities.invokeLater(()->{ 
             board.activeBlock.moveDown();
-            board.clearBoard();
-            window.clearButtons();
-            board.displayState();
-            window.paintBoard();
-            window.repaint();
-            window.getContentPane().repaint();
+            redundantMetod();
             });
             break;
         default:
@@ -63,15 +48,19 @@ private Window window = null;
               case KeyEvent.VK_W:
             SwingUtilities.invokeLater(()->{ 
             board.activeBlock.rotate();
+            redundantMetod();
+            });
+            break;    
+    }
+    }
+    
+    public void redundantMetod(){
             board.clearBoard();
             window.clearButtons();
             board.displayState();
             window.paintBoard();
             window.repaint();
             window.getContentPane().repaint();
-            });
-            break;    
-    }
     }
     
     @Override
