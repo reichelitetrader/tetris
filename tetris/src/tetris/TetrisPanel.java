@@ -60,6 +60,17 @@ private Window window = null;
             break;
         default:
             break;
+              case KeyEvent.VK_W:
+            SwingUtilities.invokeLater(()->{ 
+            board.activeBlock.rotate();
+            board.clearBoard();
+            window.clearButtons();
+            board.displayState();
+            window.paintBoard();
+            window.repaint();
+            window.getContentPane().repaint();
+            });
+            break;    
     }
     }
     
