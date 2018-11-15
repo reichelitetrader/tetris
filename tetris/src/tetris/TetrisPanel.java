@@ -1,11 +1,10 @@
-
 package tetris;
-
 import boards.Board;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 
 public class TetrisPanel extends JPanel implements KeyListener{
 private Board board = null;
@@ -19,28 +18,53 @@ private Window window = null;
     @Override
     public void keyTyped(KeyEvent e) {
     }
-
     @Override
     public void keyPressed(KeyEvent e) {
-        String locationString = "key location: ";
         int location = e.getKeyCode();
-         if (location == KeyEvent.VK_A) {
-              board.activeBlock.moveLeft();
-              board.activeBlock.moveDown();
-              window.paintBoard();
-        } else if (location == KeyEvent.VK_D) {
-            board.activeBlock.moveRight();
-              board.activeBlock.moveDown();
-               window.paintBoard();
-        } else if (location == KeyEvent.VK_S) {
+    
+        switch (location) {
+        case KeyEvent.VK_A:
+            SwingUtilities.invokeLater(()->{ 
+            board.activeBlock.moveLeft();
             board.activeBlock.moveDown();
-             window.paintBoard();
-        } 
+            board.clearBoard();
+            window.clearButtons();
+            board.displayState();
+            window.paintBoard();
+            window.repaint();
+            window.getContentPane().repaint();
+            });
+            break;
+        case KeyEvent.VK_D:
+            SwingUtilities.invokeLater(()->{ 
+            board.activeBlock.moveRight();
+            board.activeBlock.moveDown();
+            board.clearBoard();
+            window.clearButtons();
+            board.displayState();
+            window.paintBoard();
+            window.repaint();
+            window.getContentPane().repaint();
+            });
+            break; 
+        case KeyEvent.VK_S:
+            SwingUtilities.invokeLater(()->{ 
+            board.activeBlock.moveDown();
+            board.clearBoard();
+            window.clearButtons();
+            board.displayState();
+            window.paintBoard();
+            window.repaint();
+            window.getContentPane().repaint();
+            });
+            break;
+        default:
+            break;
     }
-
-    @Override
-    public void keyReleased(KeyEvent e) {
-        JOptionPane.showMessageDialog(null, "released");
     }
     
+    @Override
+    public void keyReleased(KeyEvent e) {
+      //  JOptionPane.showMessageDialog(null, "released");
+    }
 }

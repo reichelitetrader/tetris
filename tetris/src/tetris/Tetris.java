@@ -2,11 +2,8 @@ package tetris;
 
 import blocks.BlockFactory;
 import boards.Board;
-import java.awt.Dimension;
 import java.awt.Point;
 import java.util.Scanner;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 
 public class Tetris {
 
@@ -90,7 +87,6 @@ public class Tetris {
             window.clearButtons();
             window.paintBoard();
             System.out.println("punkty:" + points);
-            //  TimeUnit.SECONDS.sleep(1);
         }
     }
 }

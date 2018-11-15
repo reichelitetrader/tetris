@@ -4,14 +4,14 @@ import blocks.BlockFactory;
 
 public class Board {
 
-    public static boolean[][] fields = new boolean[10][10];
+    public  boolean[][] fields = new boolean[10][10];
     public Block activeBlock = BlockFactory.createRandomBlock(this);
 
     public Board() {
         clearBoard();
     }
 
-    public static void clearBoard() {
+    public void clearBoard() {
         for (int i = 0; i < fields.length; i++) {
             for (int j = 0; j < fields.length; j++) {
                 fields[i][j] = false;
@@ -19,7 +19,7 @@ public class Board {
         }
     }
 
-    public static void clearLine(int lineNumber) {
+    public void clearLine(int lineNumber) {
         for (int i = 0; i < fields.length; i++) {
             fields[lineNumber][i] = false;
         }
@@ -71,8 +71,6 @@ public class Board {
         }
     }
     
-    
-
     public boolean checkIfBlockFallDown() {
         for (int i = 0; i < activeBlock.points.length; i++) {
             int y = activeBlock.points[i].y;

@@ -1,15 +1,11 @@
 package tetris;
-
 import boards.Board;
-import static boards.Board.fields;
 import java.awt.GridLayout;
-import static java.awt.SystemColor.window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 
 public class Window extends JFrame {
 
@@ -41,26 +37,21 @@ public class Window extends JFrame {
                         JOptionPane.showMessageDialog(null, "start");
                     }
                 });
-
             }
         }
-
         frame.getContentPane().add(buttonsPanel); //dodanie panelu do ramki
         frame.setVisible(true);
         frame.pack(); //spakowanie okna 
         frame.setSize(400, 600);
-
     }
 
     public void paintBoard() {
-        for (int i = 0; i < Board.fields.length; i++) {
-
-            for (int j = 0; j < Board.fields.length; j++) {
-                if (Board.fields[i][j] == true) {
+        for (int i = 0; i < board.fields.length; i++) {
+            for (int j = 0; j < board.fields.length; j++) {
+                if (board.fields[i][j] == true) {
                     buttons[i][j].setText("X");
                 }
             }
-
         }
     }
 
